@@ -1,11 +1,11 @@
 // "This is the list of steps for the first project"
 
 /* Steps:
- 1. You need to make a new GitHub repo for this.  In that repo you will need index.html, and rps.js
+ Done -> 1. You need to make a new GitHub repo for this.  In that repo you will need index.html, and rps.js
 
- 2. Copy the index.html code from an old repo, make the script link to rps.js
+ Done -> 2. Copy the index.html code from an old repo, make the script link to rps.js
 
- 3.  Save your work to GitHub (git status -> git add -> git commit -> git push origin main)
+ Done -> 3.  Save your work to GitHub (git status -> git add -> git commit -> git push origin main)
 
  4. In rps.js, you are going to make "pseudocode" for your game.  Write out every step that you need to do to play the game. 
      We're going to use multiple functions to play the game, so you'll to write each of these functions.
