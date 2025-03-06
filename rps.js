@@ -37,12 +37,13 @@ function botinput(max){
     Botchoice = Math.ceil(Math.random() * max)
     return Botchoice
 }
-Playerinput()
-function Botinput(max){
+    Playerinput()
+    function botinput(max){
     Botchoice = Math.ceil(Math.random() * max)
+    return Botchoice   
     if(PlayerChoice == BotChoice){
-        console.log(" You just tied with a computer that's sad")
-    } else if(PlayerChoice == rock){
+        console.log(" You just tied with a computer that is sad")
+    } else if(PlayerChoice == Rock){
         if (BotChoice == Paper){
             PlayerChoice = PlayerChoice +1;
             console.log("The Bot is dumb and picked Paper so you win")
@@ -51,5 +52,28 @@ function Botinput(max){
             console.log(" You just lost you are loser");
         }
     } 
-}
-      
+        if(playerChoice == BotChoice){
+        console.log("You just tied with a computer that is sad")
+    } else if(PlayerChoice == Paper){
+        if (botChoice == Scissors){
+            PlayerChoice = PlayerChoice +1;
+            console.log("The Bot is dumb and picked Scissors so you win")
+        } else {
+            Botscore = Botscore +1;
+            console.log("You just lost you are loser");
+        }
+    }
+    BotChoice = Math.ceil(Math.random() * max)
+    if(PlayerChoice == BotChoice){
+        console.log("You just tied with a computer that is sad")
+    } else if (PlayerChoice == Scissors){
+        if (BotChoice == Paper){
+        PlayerChoice = PlayerChoice +1;
+        console.log("The Bot is dumb and picked Scissors so you win")
+        } else {
+        Botscore = Botscore +1;
+        console.log("You just lost you are loser");
+        }
+    }
+}    
+
