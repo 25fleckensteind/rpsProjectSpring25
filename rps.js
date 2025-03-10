@@ -8,72 +8,68 @@ if lose say "You are Bad You Are Loser" */
 const Paper = 1;
 const Rock = 2;
 const Scissors = 3;
+let Playerscore = 0;
+let Botscore = 0;
 let PlayerChoice = undefined;
 let BotChoice = undefined;
 let input = undefined;
-function Playerinput(){
-    input = prompt("Rock, Paper, Scissors");
 
-switch(input){
-    case "Rock":
-        PlayerChoice = 1;
-        Botinput(1)
-        break;
-    case "Paper":
-        PlayerChoice = 2;
-        Botinput(2)
-        break;
-    case "Scissors":
-        PlayerChoice = 3;
-        Bitinput(3)
-        break;
-    default:
-        Playerinput()
-        break;
-    }
+function Playerinput(){
+    input = prompt("Rock, Paper, Scissors").toLowerCase();
+    switch(input){
+        case "rock":
+            PlayerChoice = 1;
+            break;
+        case "paper":
+            PlayerChoice = 2;
+            break;
+        case "scissors":
+            PlayerChoice = 3;
+            break;
+        default:
+            Playerinput()
+            break;
+        }
 }
-Playerinput()
+
+
+
 function botinput(max){
-    Botchoice = Math.ceil(Math.random() * max)
-    return Botchoice
-}
-    Playerinput()
-    function botinput(max){
-    Botchoice = Math.ceil(Math.random() * max)
-    return Botchoice   
+    PlayerChoice = Playerinput()
+    Botchoice = Math.ceil(Math.random() * max) 
+    console.log(PlayerChoice, BotChoice)  
     if(PlayerChoice == BotChoice){
-        console.log(" You just tied with a computer that is sad")
+        console.log("You just tied with a computer that is sad")
     } else if(PlayerChoice == Rock){
-        if (BotChoice == Paper){
-            PlayerChoice = PlayerChoice +1;
+        if (BotChoice == Scissors){
+            Playerscore = Playerscore +1;
             console.log("The Bot is dumb and picked Paper so you win")
         } else {
             Botscore = Botscore +1;
             console.log(" You just lost you are loser");
         }
     } 
-        if(playerChoice == BotChoice){
-        console.log("You just tied with a computer that is sad")
-    } else if(PlayerChoice == Paper){
-        if (botChoice == Scissors){
-            PlayerChoice = PlayerChoice +1;
+     else if(PlayerChoice == Paper){
+        if (BotChoice == Rock){
+            Playerscore = Playerscore +1;
             console.log("The Bot is dumb and picked Scissors so you win")
         } else {
             Botscore = Botscore +1;
             console.log("You just lost you are loser");
         }
     }
-    BotChoice = Math.ceil(Math.random() * max)
-    if(PlayerChoice == BotChoice){
-        console.log("You just tied with a computer that is sad")
-    } else if (PlayerChoice == Scissors){
+     else if (PlayerChoice == Scissors){
         if (BotChoice == Paper){
-        PlayerChoice = PlayerChoice +1;
+        Playerscore = Playerscore +1;
         console.log("The Bot is dumb and picked Scissors so you win")
         } else {
         Botscore = Botscore +1;
         console.log("You just lost you are loser");
         }
-    }
+    } console.log(`Playerscore is ${Playerscore}`);
+    console.log(`Botscore is ${Botscore}`);
 }    
 
+while (Playerscore < 5 && Botscore < 5){
+    botinput(3);
+}
